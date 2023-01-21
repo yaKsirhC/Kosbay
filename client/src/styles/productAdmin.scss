@@ -1,0 +1,318 @@
+@import "master";
+
+.admin_wrapper {
+  display: grid;
+  padding-block: 2.5em 10px;
+  min-height: 100%;
+  padding-inline: 10px;
+  gap: 10px;
+  grid-template-columns: 170px 6fr 170px;
+
+
+  .product_admin{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .admin_title_container{
+      display: flex;
+      .admin_title{
+        background-color: $primary_clr;
+        padding: 5px 10px;
+        width: fit-content;
+        color: white;
+      }
+    }
+    
+    .products{
+      background-color: $gray-clr ;
+      border-radius: 4px;
+      box-shadow: 0 0 37px 0px #00000033;
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+
+
+
+
+    
+    .product_form{
+      box-shadow: 0 0 37px 0px #00000033;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: $gray_clr;
+      gap: 50px;
+      position: relative;
+      .dtdv{
+        height: 90%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        box-sizing: content-box;
+        border-left: 2px dotted black ;
+      }
+
+      & > section{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .sect_1{
+        font-size: 1.25em;
+        .form_el{
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          textarea{
+            padding: 2.5px;
+            font-size: inherit;
+            font-family: inherit;
+            flex-grow: 1;
+          }
+          
+          input{
+            padding:2.5px;
+            font-size: inherit;
+          }
+        }
+        
+        .desc{
+          flex-grow: 1;
+
+          label{
+            padding-right: 50px;
+          }
+
+        }
+      }
+
+      .sect_2{
+
+
+        .sect_options{
+          display: flex;
+          gap: 15px;
+
+          button{
+            padding: 5px;
+          }
+
+          .submitter{
+            background-color: $blue_clr;
+            color: white;
+            flex-grow: 1;
+
+            &:hover{
+
+              background-color: darken($blue_clr, 5);
+            }
+          }
+          .canceller{
+            padding-inline: 15px;
+
+            &:hover{
+              background-color: $hover_glimpse;
+            }
+          }
+        }
+      }
+
+
+    }
+  }
+
+
+
+
+}
+
+.add_form{
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+
+  // @later
+  .img_preview{
+    width: 200px;
+    aspect-ratio: 1;
+
+    input{
+      display: none;
+    }
+
+    img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.product_ad{
+  gap: 10px;
+  display: flex;  
+  padding-block: 25px;
+  border-bottom: 1px solid black;
+
+  .img{
+    // @media
+    width: 500px;
+    aspect-ratio: 1;
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .right{
+    flex-grow: 1;
+    // max-width: 500px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .top{
+    display: flex;
+    justify-content: space-between;
+
+    div{
+      margin-right: 30px;
+    }
+
+    p{
+      margin-left: auto;
+      margin-right: 20px;
+      font-size: .75em;
+      color: $gray_text_clr;
+    }
+
+    h2{
+      font-size: 2em;
+    }
+
+  }
+
+  .bottom{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    p:first-child{
+      margin-top: 10px;
+      font-size: 1.5em;
+    }
+
+    .price{
+    }
+
+    .options{
+      margin-block: auto ;
+      display: flex;
+      justify-content: space-between;
+      padding-inline: 0 20px;
+
+      & > *{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        padding: 5px 10px;
+
+        span{
+          font-size: 1.25em;
+        }
+
+        &:hover{
+
+          background-color:$hover_glimpse;
+        }
+      }
+    }
+  }
+}
+
+
+.context_menu{
+  list-style: none;
+  position: absolute;
+  bottom: 100%;
+  left: 100%;
+  background-color: #fff;
+  
+  .delete{
+    color: red;
+    
+  }
+  li{
+    padding: 5px 10px;
+    &:hover{
+      background-color: $hover_glimpse;
+    }
+    button{
+      width: 100%;
+      height: 100%;
+      color: inherit;
+      font-size: 1.1em;
+    }
+  }
+
+}
+
+div:has(>.context_menu){
+  position: relative;
+}
+
+.warning_modal{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  h1{
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
+  }
+
+  h3{
+    text-align: center;
+    max-width: 25ch;
+    color: $gray_text_clr;
+  }
+
+  .options{
+    display: flex;
+    gap: 10px;
+
+    .remover{
+      background-color: red;
+      color: white;
+      padding: 4px 8px;
+
+      &:hover{
+        background-color: darken(red, 12);
+      }
+    }
+
+    & > button{
+      flex-grow: 1;
+      font-size: 1em;
+      padding: 5px 10px;
+
+      &:hover{
+      
+        background-color: $hover_glimpse;
+      }
+    }
+
+
+  }
+}

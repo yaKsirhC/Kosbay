@@ -1,0 +1,17 @@
+.modal{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    padding: 10px;
+    background-color: #fff;
+    z-index: 99999999;
+    border-radius: 4px;
+}
+
+.modal_shadow{
+    z-index: 999999;
+    position: absolute;
+    inset: 0;
+    background-color: rgba(210, 209, 209, 0.53);
+}

@@ -1,0 +1,129 @@
+@import "./master";
+
+.buy_sell_grid {
+  display: grid;
+  padding-block: 2.5em 10px;
+  min-height: 100%;
+  padding-inline: 10px;
+  gap: 10px;
+  grid-template-columns: 270px 6fr 270px;
+  grid-template-rows: max-content 1fr;
+  grid-template-areas:
+    "h1 search ads "
+    "filter list ads";
+
+  .products_ads {
+    grid-area: ads;
+    background-color: $gray_clr;
+    border-radius: 4px;
+    padding: 10px;
+    height: 100%;
+  }
+
+  h1 {
+    grid-area: h1;
+    align-self: center;
+  }
+  form {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    grid-area: search;
+  }
+
+  .filter {
+    box-shadow: 0 0 37px 0px #00000033;
+    max-height: 80vh;
+    overflow: auto;
+
+    grid-area: filter;
+    background-color: $gray_clr;
+    border-radius: 4px;
+    padding: 10px;
+
+    form{
+      display: flex;
+      flex-direction: column;
+
+
+      .price_filter{
+        display: flex;
+
+        input{
+          max-width: 8ch;
+        }
+      }
+    }
+  }
+}
+
+.product_list {
+  box-shadow: 0 0 37px 0px #00000033;
+  background-color: $gray_clr;
+  border-radius: 4px;
+  padding: 10px;
+  grid-area: list;
+  display: flex;
+  overflow-x: hidden;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+
+  .product_block {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    border-radius: 4px;
+
+    .product_img{
+      background-color: rgb(156, 164, 218);
+    }
+    .head {
+      gap: 10px;
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+
+      padding-inline: 10px;
+      padding-block: 10px;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      .top {
+        display: flex;
+        gap: 10px;
+
+        .time {
+          margin-left: auto;
+          color: gray_text_clr;
+        }
+      }
+
+      .img {
+        width: 40px;
+        aspect-ratio: 1;
+        background-color: black;
+        border-radius: 50%;
+
+        img{
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    img {
+      object-fit: cover;
+      width: 300px;
+      height: 300px;
+    }
+
+    .footer {
+      padding-block: 10px;
+      padding-inline: 10px;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      background-color: rgb(156, 164, 218);
+    }
+  }
+}

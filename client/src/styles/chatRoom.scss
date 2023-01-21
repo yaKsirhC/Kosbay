@@ -1,0 +1,147 @@
+@import "master";
+
+.chat_grid {
+  display: grid;
+  padding-block: 2.5em 10px;
+  min-height: 100%;
+  padding-inline: 10px;
+  gap: 10px;
+  grid-template-columns: 270px 6fr 270px;
+  grid-template-rows: max-content 1fr;
+  grid-template-areas:
+    " h1 api ads"
+    "contacts api ads";
+
+  h1 {
+    grid-area: h1;
+  }
+
+  .contacts {
+    box-shadow: 0 0 37px 0px #00000033;
+
+    border-radius: 4px;
+    padding: 10px;
+    max-height: 80vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    grid-area: contacts;
+    background-color: $gray_clr;
+
+    button {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 10px;
+      &:hover {
+        background-color: transparentize($light_blue, 0.9);
+      }
+
+      .img {
+        width: 50px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .chatAPI {
+    box-shadow: 0 0 37px 0px #00000033;
+    border-radius: 4px;
+    // padding: 10px;
+    grid-area: api;
+    position: relative;
+
+    background-color: $gray_clr;
+    max-height: 88vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 10px;
+    
+    .upload_shadow{
+      pointer-events: none;
+      display: grid;
+      place-items: center;
+      position: absolute;
+      inset: 0;
+      background-color: rgba(76, 67, 56, 0.25);
+      border: 1px dotted $hover_glimpse;
+      path{
+        stroke-opacity: .5;
+      }
+    }
+
+    .content {
+      padding: 5px;
+      border-radius: 4px;
+    }
+    
+    .message_self {
+      align-self: end;
+      .chat_period {
+        text-align: end;
+      }
+    }
+    .content_self {
+      background-color: $chat_self_clr;
+    
+    }
+    .message_other {
+      align-self: start;
+      .chat_period {
+        text-align: start;
+      }
+    }
+    .content_other {
+      background-color: $chat_other_clr;
+    }
+    
+    .messages {
+      display: flex;
+      flex-direction: column;
+    
+      .message_container {
+        pointer-events: none;
+        border-radius: 4px;
+        padding: 5px;
+        max-width: 50%;
+    
+        p{
+          word-wrap:break-word;
+        }
+    
+        .chat_period {
+          font-size: 0.75em;
+          color: $gray_text_clr;
+        }
+      }
+    }
+    .message_form {
+      padding: 2px 5px;
+      flex-direction: row;
+      background-color: rgb(255, 255, 255);
+      align-items: center;
+      display: flex;
+    
+      input {
+        flex-grow: 1;
+        padding: 2px;
+      }
+    }
+  }
+
+  .chat_ads {
+    grid-area: ads;
+    background-color: $gray_clr;
+    border-radius: 4px;
+    padding: 10px;
+  }
+}

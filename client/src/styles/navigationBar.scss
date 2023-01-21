@@ -1,0 +1,65 @@
+@import "./master";
+nav{
+    position: relative;
+    display: flex;
+    z-index: 1;
+
+    .logo{
+        padding: 5px 10px;
+        background-color: $gray_clr;
+    }
+
+    .navigation_items{
+        display: flex;
+        background-color: $primary_clr;
+        flex-grow: 1;
+        
+        .nav_item{
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-inline: 5px ;
+            cursor: pointer;
+            &:hover{
+                background-color: $hover_glimpse;
+            }
+        }
+    }
+    
+    .nav_display{
+        // padding-inline: 10px 0;
+        flex-grow: 1;
+    }
+    
+    .hamburger{
+        padding-inline: 10px;
+        padding: 10px;
+        position: relative;
+
+        &:hover{
+            background-color: $hover_glimpse;
+        }
+        
+    }
+    .ham_container{
+        display: flex;
+        position: relative;
+        .ham_elements{
+            position: absolute;
+            border-radius: 4px;
+            z-index: 99;
+            background-color: #fff;
+            background-color: $gray_clr;
+            top: 100%;
+            right: 100%;
+            padding: 5px;
+            border: 2px solid white;
+
+            a{
+                padding: 5px;
+                color: #000;
+            }
+        }
+    }
+}

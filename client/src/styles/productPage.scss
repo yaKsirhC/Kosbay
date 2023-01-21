@@ -1,0 +1,66 @@
+@import "master";
+
+.product_page_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-inline: 10px;
+  padding-block: 2em 10px;
+  gap: 30px;
+
+  .main_img {
+    width: 50vw;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .period{
+      color: $gray_text_clr;
+    }
+
+    .bottom_part {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: start;
+      button {
+        border: none;
+        background-color: $blue_clr;
+        color: white;
+        padding: 5px 10px;
+        cursor: pointer;
+        h2 {
+          float: left;
+          margin-right: 10px;
+        }
+        &:hover {
+          background-color: darken($blue_clr, 2);
+        }
+      }
+    }
+
+    .top_part {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      .user_img {
+        width: 10vw;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: $gray-clr;
+      }
+
+      h1 {
+        font-size: 3em;
+      }
+
+      p {
+        margin-left: auto;
+        margin-right: 10px;
+        align-self: start;
+      }
+    }
+  }
+}

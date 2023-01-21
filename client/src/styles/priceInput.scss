@@ -1,0 +1,44 @@
+@import "master";
+
+.price_warn{
+  display: flex;
+
+  flex-direction: column;
+  .input_container {
+    font-size: inherit;
+    background-color: #fff;
+    display: flex;
+    border: 1.3px solid black;
+    width: fit-content;   
+    padding: 2.5px;
+    transition: all 250ms;
+    
+    &:has(>input:focus){
+      border: 1.3px solid $blue_clr;
+      
+    }
+    
+    input {
+      font-size: inherit;
+      padding-left: 5px;
+      width: 11ch;
+      border: none;
+      
+      &:focus {
+        outline: 0;
+      }
+    }
+    .symbol{
+      
+    }
+
+  }
+  .warn {
+    background-color: #fff;
+    padding: 5px;
+    color: red;
+    width: max-content;
+    font-size: .85em;
+  }
+}
+

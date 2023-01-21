@@ -1,0 +1,59 @@
+@import "./master";
+.announcements_grid {
+  display: grid;
+  padding-block: 2.5em 10px;
+  min-height: 100%;
+  padding-inline: 10px;
+  gap: 10px;
+  grid-template-columns: 270px 6fr 270px;
+  grid-template-rows: max-content 1fr;
+  grid-template-areas:
+    " h1 history ads"
+    "mini   history ads";
+
+  h1 {
+    grid-area: h1;
+  }
+
+  .minified_announcements {
+    grid-area: mini;
+    box-shadow: 0 0 37px 0px #00000033;
+
+    background-color: $gray_clr;
+    border-radius: 4px;
+    padding: 10px;
+
+    max-height: 80vh;
+    overflow: auto;
+  }
+  .announcement_history {
+    box-shadow: 0 0 37px 0px #00000033;
+    border-radius: 4px;
+    padding: 10px;
+    grid-area: history;
+    background-color: $gray_clr;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .announcements{
+      background-color: #fff;
+      border-radius: 4px;
+      padding: 10px;
+      img{
+        width: 400px;
+      }
+
+    }
+
+
+  }
+
+  .announcement_ads {
+    border-radius: 4px;
+    padding: 10px;
+    grid-area: ads;
+    background-color: $gray_clr;
+  }
+}
+

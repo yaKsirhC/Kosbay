@@ -1,0 +1,16 @@
+@import "master";
+
+#aula {
+  border: 1px dotted black;
+  padding: 5px;
+  background-color: $light_gray;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-position: center;
+  input {
+    display: none;
+  }
+}
